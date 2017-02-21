@@ -236,9 +236,9 @@
 			<key>comment</key>
 			<string>Eq block</string>
 			<key>begin</key>
-			<string>\begin{equation}</string>
+			<string>\\begin\{equation\}</string>
 			<key>end</key>
-			<string>\end{equation}</string>
+			<string>\\end\{equation\}</string>
 			<key>name</key>
 			<string>mathblock.pandoc</string>
 		</dict>
@@ -246,9 +246,9 @@
 			<key>comment</key>
 			<string>align block</string>
 			<key>begin</key>
-			<string>\begin{align}</string>
+			<string>\\begin\{align\}</string>
 			<key>end</key>
-			<string>\end{align}</string>
+			<string>\\end\{align\}</string>
 			<key>name</key>
 			<string>mathblock.pandoc</string>
 		</dict>
@@ -256,9 +256,9 @@
 			<key>comment</key>
 			<string>Eq2 block</string>
 			<key>begin</key>
-			<string>\begin{equation*}</string>
+			<string>\\begin\{equation\*\}</string>
 			<key>end</key>
-			<string>\end{equation*}</string>
+			<string>\\end\{equation\*\}</string>
 			<key>name</key>
 			<string>mathblock.pandoc</string>
 		</dict>
