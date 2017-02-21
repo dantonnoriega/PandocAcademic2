@@ -234,6 +234,36 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>Eq block</string>
+			<key>begin</key>
+			<string>\begin{equation}</string>
+			<key>end</key>
+			<string>\end{equation}</string>
+			<key>name</key>
+			<string>mathblock.pandoc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>align block</string>
+			<key>begin</key>
+			<string>\begin{align}</string>
+			<key>end</key>
+			<string>\end{align}</string>
+			<key>name</key>
+			<string>mathblock.pandoc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Eq2 block</string>
+			<key>begin</key>
+			<string>\begin{equation*}</string>
+			<key>end</key>
+			<string>\end{equation*}</string>
+			<key>name</key>
+			<string>mathblock.pandoc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Code block</string>
 			<key>begin</key>
 			<string>```</string>
