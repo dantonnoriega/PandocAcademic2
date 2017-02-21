@@ -65,6 +65,17 @@
 				<string>#D54E53</string>
 			</dict>
 		</dict>
+    <dict>
+    <key>name</key>
+        <string>Markdown: List</string>
+        <key>scope</key>
+        <string>numlist.pandoc, list.pandoc</string>
+        <key>settings</key>
+        <dict>
+            <key>foreground</key>
+            <string>#d0d0ff</string>
+        </dict>
+    </dict>
 		<dict>
 			<key>name</key>
 			<string>Number, Constant, Function Argument, Tag Attribute, Embedded</string>

@@ -115,6 +115,22 @@
 			<key>name</key>
 			<string>math.pandoc</string>
 		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Number list</string>
+			<key>match</key>
+			<string>^[0-9]\.[ ]+(.*)\s</string>
+			<key>name</key>
+			<string>numlist.pandoc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Basic list</string>
+			<key>match</key>
+			<string>^\-[ ]+(.*)\s</string>
+			<key>name</key>
+			<string>list.pandoc</string>
+		</dict>
 
 		<dict>
 			<key>begin</key>
