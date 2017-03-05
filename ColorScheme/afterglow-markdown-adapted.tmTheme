@@ -58,13 +58,39 @@
 			<key>name</key>
 			<string>Variable, String Link, Regular Expression, Tag Name</string>
 			<key>scope</key>
-			<string>variable, support.other.variable, string.other.link, string.regexp, entity.name.tag, entity.other.attribute-name, meta.tag, declaration.tag, punctuation.definition.bold.markdown, punctuation.definition.italic.markdown, balise.pandoc</string>
+			<string>variable, support.other.variable, string.other.link, string.regexp, entity.name.tag, entity.other.attribute-name, meta.tag, declaration.tag,  balise.pandoc</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#D54E53</string>
 			</dict>
 		</dict>
+    <dict>
+        <key>name</key>
+        <string>Markup: Strong</string>
+        <key>scope</key>
+        <string>punctuation.definition.bold.markdown</string>
+        <key>settings</key>
+        <dict>
+            <key>fontStyle</key>
+            <string>bold</string>
+            <key>foreground</key>
+            <string>#ffd500</string>
+        </dict>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Markdown: Emphasis</string>
+        <key>scope</key>
+        <string>punctuation.definition.italic.markdown</string>
+        <key>settings</key>
+        <dict>
+            <key>fontStyle</key>
+            <string>italic</string>
+            <key>foreground</key>
+            <string>#ffea00</string>
+        </dict>
+    </dict>
     <dict>
     <key>name</key>
         <string>Markdown: List</string>

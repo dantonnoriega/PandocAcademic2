@@ -234,7 +234,7 @@
 			<key>comment</key>
 			<string>Footnotes and notes</string>
 			<key>match</key>
-			<string>^\[\^(.*)\]:(.*)$</string>
+			<string>^\[\^([^\]]*)\]:(.*)$</string>
 			<key>name</key>
 			<string>note.pandoc</string>
 		</dict>
@@ -242,7 +242,7 @@
 			<key>comment</key>
 			<string>Footnotes and notes</string>
 			<key>match</key>
-			<string>\^\[(.*)\]</string>
+			<string>\^\[([^\]]*)\]</string>
 			<key>name</key>
 			<string>note.pandoc</string>
 		</dict>
