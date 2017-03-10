@@ -46,7 +46,7 @@ class PandocConvertorCommand(sublime_plugin.TextCommand):
             self.view.score_selector(0, "text.html.markdown.multimarkdown") > 0)
 
     def getTemplatePath(self, filename):
-        path = os.path.join(sublime.packages_path(), 'Pandoc Academic',
+        path = os.path.join(sublime.packages_path(), 'PandocAcademic2',
                                 'Styles', filename)
         if os.path.isfile(path):
             print("Template file found in the default template folder")
@@ -91,8 +91,7 @@ class PandocConvertorCommand(sublime_plugin.TextCommand):
                 if target == 'html' or target == 'pdf':
                     cmd.append('--template=' + style_path)
                 elif target == 'docx':
-                    cmd.append('--reference-docx='\
-                       + self.getTemplatePath(style_path))
+                    cmd.append('--normalize')
             if target == 'beamer':
                 cmd.append('-V')
                 cmd.append('theme:' + style)
@@ -100,8 +99,7 @@ class PandocConvertorCommand(sublime_plugin.TextCommand):
             if target == 'html':
               cmd.append('--template=' + self.getTemplatePath("template.html"))
             elif target == 'docx':
-                cmd.append('--reference-docx='\
-                        + self.getTemplatePath("reference.docx"))
+                cmd.append('--normalize')
         return cmd
 
     def opt(self, cmd, target, dir_path):
