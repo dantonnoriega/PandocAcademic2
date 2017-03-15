@@ -7,6 +7,7 @@
 		<string>markdown</string>
 		<string>md</string>
 		<string>pandoc</string>
+		<string>Rmd</string>
 		<string>mdown</string>
 		<string>markdn</string>
 	</array>
@@ -103,9 +104,9 @@
 			<key>comment</key>
 			<string>Inline Math LaTeX</string>
 			<key>match</key>
-			<string>\$([^\s\$][^\$]*)\$</string>
+			<string>[^\\]\$([^\s\$]?[^\$]*)[^\\]\$</string>
 			<key>name</key>
-			<string>math.pandoc</string>
+			<string>mathblock.pandoc</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -121,7 +122,7 @@
 			<key>match</key>
 			<string>\$\$([^\$]*)\$\$</string>
 			<key>name</key>
-			<string>math.pandoc</string>
+			<string>mathblock.pandoc</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -135,55 +136,14 @@
 			<key>comment</key>
 			<string>Basic list</string>
 			<key>match</key>
-			<string>^\-[ ]+(.*)\s</string>
+			<string>^(\-|\*)[ ]+(.*)\s</string>
 			<key>name</key>
 			<string>list.pandoc</string>
 		</dict>
 
 		<dict>
 			<key>begin</key>
-			<string>^\s*\[\^</string>
-			<key>end</key>
-			<string>\]:</string>
-			<key>name</key>
-			<string>footnote.num.pandoc</string>
-
-			<!--
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>[A-Za-z0-9]+</string>
-					<key>name</key>
-					<string>footnote.num.pandoc</string>
-				</dict>
-			</array>
-			-->
-		</dict>
-
-		<dict>
-			<key>begin</key>
-			<string>\[\^</string>
-			<key>end</key>
-			<string>\]</string>
-			<key>name</key>
-			<string>footnote.delim.pandoc</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>[A-Za-z0-9]+</string>
-					<key>name</key>
-					<string>footnote.num.pandoc</string>
-				</dict>
-			</array>
-		</dict>
-
-
-
-		<dict>
-			<key>begin</key>
-			<string>\[</string>
+			<string>\[@</string>
 			<key>end</key>
 			<string>\]</string>
 			<key>name</key>
@@ -192,12 +152,49 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>@[A-Za-z0-9_:-]+</string>
+					<string>[A-Za-z0-9_:-]+</string>
 					<key>name</key>
 					<string>citation.pandoc</string>
 				</dict>
 			</array>
 		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>\[\^</string>
+			<key>end</key>
+			<string>\]</string>
+			<key>name</key>
+			<string>note.pandoc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[\w]+</string>
+					<key>name</key>
+					<string>footnote.num.pandoc</string>
+				</dict>
+			</array>
+		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>\^\[</string>
+			<key>end</key>
+			<string>\]</string>
+			<key>name</key>
+			<string>note.pandoc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[\w]+</string>
+					<key>name</key>
+					<string>footnote.num.pandoc</string>
+				</dict>
+			</array>
+		</dict>
+
 		<dict>
 			<key>comment</key>
 			<string>Reference citation</string>
@@ -210,7 +207,23 @@
 			<key>comment</key>
 			<string>Link references</string>
 			<key>match</key>
-			<string>!\[(.*)\]\(.*\)</string>
+			<string>^!\[[^\]]*\]\([^\)]+\)</string>
+			<key>name</key>
+			<string>link.pandoc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Reference Link</string>
+			<key>match</key>
+			<string>^\[[^\]]+\]:.+$</string>
+			<key>name</key>
+			<string>link.pandoc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>section links</string>
+			<key>match</key>
+			<string>.?(\[[^\]]+\])+(\([^\)]+\))+</string>
 			<key>name</key>
 			<string>link.pandoc</string>
 		</dict>
@@ -218,7 +231,7 @@
 			<key>comment</key>
 			<string>Link references</string>
 			<key>match</key>
-			<string>(\[.*\])+(\(http.*\))+</string>
+			<string>(\[[^\]]+\])+(\(http[^\)]+\))+</string>
 			<key>name</key>
 			<string>link.pandoc</string>
 		</dict>
@@ -226,7 +239,7 @@
 			<key>comment</key>
 			<string>Link references</string>
 			<key>match</key>
-			<string>(\(http(.*)\))+</string>
+			<string>(\(http[^\)]+\))+</string>
 			<key>name</key>
 			<string>link.pandoc</string>
 		</dict>
@@ -234,7 +247,7 @@
 			<key>comment</key>
 			<string>Footnotes and notes</string>
 			<key>match</key>
-			<string>^\[\^([^\]]*)\]:(.*)$</string>
+			<string>\[\^([^\]]*)\]:(.*)$</string>
 			<key>name</key>
 			<string>note.pandoc</string>
 		</dict>
@@ -250,9 +263,9 @@
 			<key>comment</key>
 			<string>Math block</string>
 			<key>begin</key>
-			<string>\$\$</string>
+			<string>^\$\$</string>
 			<key>end</key>
-			<string>\$\$</string>
+			<string>\$\$$</string>
 			<key>name</key>
 			<string>mathblock.pandoc</string>
 		</dict>
