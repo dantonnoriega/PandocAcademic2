@@ -128,7 +128,7 @@
 			<key>comment</key>
 			<string>Number list</string>
 			<key>match</key>
-			<string>^[0-9]\.[ ]+(.*)\s</string>
+			<string>^\s*[0-9]\.[ ]+(.*)\s</string>
 			<key>name</key>
 			<string>numlist.pandoc</string>
 		</dict>
@@ -136,7 +136,7 @@
 			<key>comment</key>
 			<string>Basic list</string>
 			<key>match</key>
-			<string>^(\-|\*)[ ]+(.*)\s</string>
+			<string>^\s*(\-|\*)[ ]+(.*)\s</string>
 			<key>name</key>
 			<string>list.pandoc</string>
 		</dict>
@@ -303,9 +303,9 @@
 			<key>comment</key>
 			<string>Code block</string>
 			<key>begin</key>
-			<string>^```</string>
+			<string>^\s*```</string>
 			<key>end</key>
-			<string>^```</string>
+			<string>^\s*```</string>
 			<key>name</key>
 			<string>code.pandoc</string>
 		</dict>
